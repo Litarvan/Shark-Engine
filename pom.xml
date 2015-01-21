@@ -1,0 +1,76 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>fr.theshark34.sharkengine</groupId>
+  <artifactId>shark-engine</artifactId>
+  <version>0.0.1-ALPHA</version>
+  <packaging>jar</packaging>
+
+  <name>The Shark-Engine</name>
+  <description>An easy Java game engine</description>
+  <url>http://www.theshark34.tk/sharkengine.php</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <licenses>
+  	<license>
+  		<name>Apache License, Version 2.0</name>
+  		<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        <distribution>repo</distribution>
+  	</license>
+  </licenses>
+
+  <developers>
+  	<developer>
+  		<id>theshark34</id>
+  		<name>TheShark34</name>
+  		<url>http://www.theshark34.tk/</url>
+  	</developer>
+  </developers>
+
+  <dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+	  <groupId>org.slick2d</groupId>
+	  <artifactId>slick2d-core</artifactId>
+	  <version>1.0.1</version>
+	</dependency>
+	<dependency>
+	  <groupId>org.lwjgl.lwjgl</groupId>
+	  <artifactId>lwjgl</artifactId>
+	  <version>2.9.1</version>
+	</dependency>
+	<dependency>
+	  <groupId>org.lwjgl.lwjgl</groupId>
+	  <artifactId>lwjgl_util</artifactId>
+	  <version>2.9.1</version>
+	</dependency>
+  </dependencies>
+
+  <build>
+    <plugins>
+   	<plugin>
+        <groupId>com.googlecode.mavennatives</groupId>
+        <artifactId>maven-nativedependencies-plugin</artifactId>
+        <version>0.0.5</version>
+        <executions>
+          <execution>
+             <id>unpacknatives</id>
+             <phase>generate-resources</phase>
+             <goals>
+               <goal>copy</goal>
+             </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</project>

@@ -1,6 +1,8 @@
-target/
-pom.xml.tag
-pom.xml.releaseBackup
-pom.xml.versionsBackup
-pom.xml.next
-release.properties
+target/classes
+target/maven-archiver
+target/maven-status
+target/site
+target/surefire-reports
+target/test-classes
+Thumbs.db
+*/Thumbs.db

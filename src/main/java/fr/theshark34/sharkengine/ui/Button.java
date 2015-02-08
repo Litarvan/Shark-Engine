@@ -215,7 +215,7 @@ public class Button extends Component {
 		// Enabling blending
 		GL11.glEnable(GL11.GL_BLEND);
 		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
-		
+
 		// Being sure that texturing is disabled
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
 
@@ -284,6 +284,101 @@ public class Button extends Component {
 	 */
 	public UnicodeFont getFont() {
 		return this.font;
+	}
+
+	/**
+	 * Return the button text
+	 * 
+	 * @return The button text
+	 */
+	public String getText() {
+		return text;
+	}
+
+	/**
+	 * Set a new button text
+	 * 
+	 * @param text
+	 *            The new button text
+	 */
+	public void setText(String text) {
+		this.text = text;
+	}
+
+	/**
+	 * Return the button color
+	 * 
+	 * @return The button color
+	 */
+	public Color getColor() {
+		return color;
+	}
+
+	/**
+	 * Set a new button color
+	 * 
+	 * @param color
+	 *            The new button color
+	 */
+	public void setColor(Color color) {
+		this.color = color;
+	}
+
+	/**
+	 * Return the button color when the mouse is on
+	 * 
+	 * @return The button color when the mouse is on
+	 */
+	public Color getColorHover() {
+		return colorHover;
+	}
+
+	/**
+	 * Set a new button color when the mouse is on
+	 * 
+	 * @param colorHover
+	 *            The new button color when the mouse is on
+	 */
+	public void setColorHover(Color colorHover) {
+		this.colorHover = colorHover;
+	}
+
+	/**
+	 * Return the button text color
+	 * 
+	 * @return The button text color
+	 */
+	public Color getTextColor() {
+		return textColor;
+	}
+
+	/**
+	 * Set a new button text color
+	 * 
+	 * @param textColor
+	 *            The new button text color
+	 */
+	public void setTextColor(Color textColor) {
+		this.textColor = textColor;
+	}
+
+	/**
+	 * Return the button action
+	 * 
+	 * @return The button action
+	 */
+	public ButtonAction getAction() {
+		return action;
+	}
+
+	/**
+	 * Set a new button action
+	 * 
+	 * @param action
+	 *            The new button action
+	 */
+	public void setAction(ButtonAction action) {
+		this.action = action;
 	}
 
 	/**

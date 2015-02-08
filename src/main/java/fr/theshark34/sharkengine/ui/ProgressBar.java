@@ -74,6 +74,17 @@ public class ProgressBar extends Component {
 
 	/**
 	 * Lightest constructor
+	 * 
+	 * @param x
+	 *            The x pos
+	 * @param y
+	 *            The y pos
+	 * @param width
+	 *            The width
+	 * @param height
+	 *            The height
+	 * @param textColor
+	 *            The text color
 	 */
 	public ProgressBar(int x, int y, int width, int height, Color textColor) {
 		this.x = x;
@@ -89,6 +100,19 @@ public class ProgressBar extends Component {
 
 	/**
 	 * Normal constructor
+	 * 
+	 * @param x
+	 *            The x pos
+	 * @param y
+	 *            The y pos
+	 * @param width
+	 *            The width
+	 * @param height
+	 *            The height
+	 * @param textColor
+	 *            The text color
+	 * @param color
+	 *            The bar color
 	 */
 	public ProgressBar(int x, int y, int width, int height, Color textColor,
 			Color color) {
@@ -105,6 +129,21 @@ public class ProgressBar extends Component {
 
 	/**
 	 * Full constructor
+	 * 
+	 * @param x
+	 *            The x pos
+	 * @param y
+	 *            The y pos
+	 * @param width
+	 *            The width
+	 * @param height
+	 *            The height
+	 * @param textColor
+	 *            The text color
+	 * @param color
+	 *            The bar color
+	 * @param fgColor
+	 *            The foreground color
 	 */
 	public ProgressBar(int x, int y, int width, int height, Color textColor,
 			Color color, Color fgColor) {
@@ -154,7 +193,7 @@ public class ProgressBar extends Component {
 					(float) fgColor.getAlpha() / 255);
 
 			int fgWidth = (int) (width / ((float) maximum / (float) value));
-			
+
 			// Drawing the foreground
 			GL11.glBegin(GL11.GL_QUADS);
 			{

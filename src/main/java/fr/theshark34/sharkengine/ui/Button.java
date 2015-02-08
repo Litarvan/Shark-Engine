@@ -209,15 +209,20 @@ public class Button extends Component {
 
 	@Override
 	public void draw() {
+		// Enabling blending
+		GL11.glEnable(GL11.GL_BLEND);
+		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+
 		// Check if the mouse is on the button
 		if (Mouse.getX() > this.x && Mouse.getX() < this.x + this.width
 				&& Mouse.getY() < Display.getHeight() - this.y
 				&& Mouse.getY() > Display.getHeight() - this.y - this.height) {
 
 			// Changing button's color to colorHover
-			GL11.glColor3f((float) colorHover.getRed() / 255,
+			GL11.glColor4f((float) colorHover.getRed() / 255,
 					(float) colorHover.getGreen() / 255,
-					(float) colorHover.getBlue() / 255);
+					(float) colorHover.getBlue() / 255,
+					(float) colorHover.getAlpha() / 255);
 
 			// If the mouse clicked and clicked is false, executing action
 			// and setting clicked to true, then the action will not be
@@ -232,9 +237,10 @@ public class Button extends Component {
 				clicked = false;
 		} else
 			// Else, setting the color to the base color
-			GL11.glColor3f((float) color.getRed() / 255,
+			GL11.glColor4f((float) color.getRed() / 255,
 					(float) color.getGreen() / 255,
-					(float) color.getBlue() / 255);
+					(float) color.getBlue() / 255,
+					(float) color.getAlpha() / 255);
 
 		// Drawing the button's base (a rectangle)
 		GL11.glBegin(GL11.GL_QUADS);
@@ -250,10 +256,6 @@ public class Button extends Component {
 			GL11.glVertex2f(x, y + height);
 		}
 		GL11.glEnd();
-
-		// Enabling blending
-		GL11.glEnable(GL11.GL_BLEND);
-		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
 
 		// Drawing the text
 		this.font.drawString(x + (this.width - this.font.getWidth(text)) / 2, y

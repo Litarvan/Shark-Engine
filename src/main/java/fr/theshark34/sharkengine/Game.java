@@ -24,7 +24,7 @@ import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
 import org.lwjgl.util.Color;
 
-import fr.theshark34.sharkengine.gui.GUI;
+import fr.theshark34.sharkengine.ui.GUI;
 import fr.theshark34.sharkengine.util.DisplayUtil;
 import fr.theshark34.sharkengine.util.ErrorUtil;
 

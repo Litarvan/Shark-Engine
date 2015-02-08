@@ -21,7 +21,7 @@ import org.lwjgl.opengl.Display;
 import org.newdawn.slick.util.ResourceLoader;
 
 import fr.theshark34.sharkengine.Game;
-import fr.theshark34.sharkengine.gui.GUI;
+import fr.theshark34.sharkengine.ui.GUI;
 import fr.theshark34.sharkengine.ui.Image;
 import fr.theshark34.sharkengine.util.ErrorUtil;
 
@@ -48,7 +48,7 @@ public class GUISplash extends GUI {
 		// Initializing the big splash logo
 		try {
 			splash = new Image(0, 0,
-					ResourceLoader.getResourceAsStream("res/splash.png"));
+					ResourceLoader.getResourceAsStream("demo/splash.png"));
 			splash.setX(Display.getWidth() / 2 - splash.getWidth() / 2);
 			splash.setY(Display.getHeight() / 2 - splash.getHeight() / 2);
 		} catch (IOException e) {

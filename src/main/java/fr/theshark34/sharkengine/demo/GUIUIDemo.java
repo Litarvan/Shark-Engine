@@ -34,7 +34,7 @@ public class GUIUIDemo extends GUI {
 	 */
 	@Override
 	public void init() {
-		simpleButton = new Button(50, 50, 150, 60, "UI Demo", null,
+		simpleButton = new Button(50, 50, 150, 60, "Simple Button", null,
 				new ButtonAction() {
 					@Override
 					public void buttonClicked() {

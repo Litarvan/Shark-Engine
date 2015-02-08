@@ -21,9 +21,9 @@ import org.lwjgl.opengl.Display;
 import org.newdawn.slick.util.ResourceLoader;
 
 import fr.theshark34.sharkengine.Game;
-import fr.theshark34.sharkengine.ui.Button;
 import fr.theshark34.sharkengine.ui.GUI;
-import fr.theshark34.sharkengine.ui.Image;
+import fr.theshark34.sharkengine.ui.components.Button;
+import fr.theshark34.sharkengine.ui.components.Image;
 import fr.theshark34.sharkengine.ui.util.ButtonAction;
 import fr.theshark34.sharkengine.util.ErrorUtil;
 

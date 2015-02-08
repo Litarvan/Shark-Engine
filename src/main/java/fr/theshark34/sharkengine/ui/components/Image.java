@@ -13,7 +13,7 @@
  * License for the specific language governing permissions and limitations
  * under the License.
  */
-package fr.theshark34.sharkengine.ui;
+package fr.theshark34.sharkengine.ui.components;
 
 import java.io.IOException;
 import java.io.InputStream;

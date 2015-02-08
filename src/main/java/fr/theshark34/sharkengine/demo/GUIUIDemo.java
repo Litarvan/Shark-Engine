@@ -15,10 +15,10 @@
  */
 package fr.theshark34.sharkengine.demo;
 
-import fr.theshark34.sharkengine.ui.Button;
-import fr.theshark34.sharkengine.ui.Checkbox;
 import fr.theshark34.sharkengine.ui.GUI;
-import fr.theshark34.sharkengine.ui.ProgressBar;
+import fr.theshark34.sharkengine.ui.components.Button;
+import fr.theshark34.sharkengine.ui.components.Checkbox;
+import fr.theshark34.sharkengine.ui.components.ProgressBar;
 import fr.theshark34.sharkengine.ui.util.ButtonAction;
 
 /**

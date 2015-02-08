@@ -215,6 +215,9 @@ public class Button extends Component {
 		// Enabling blending
 		GL11.glEnable(GL11.GL_BLEND);
 		GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_ONE_MINUS_SRC_ALPHA);
+		
+		// Being sure that texturing is disabled
+		GL11.glDisable(GL11.GL_TEXTURE_2D);
 
 		// Check if the mouse is on the button
 		if (Mouse.getX() > this.x && Mouse.getX() < this.x + this.width

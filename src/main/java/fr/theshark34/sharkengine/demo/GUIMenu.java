@@ -20,6 +20,7 @@ import java.io.IOException;
 import org.lwjgl.opengl.Display;
 import org.newdawn.slick.util.ResourceLoader;
 
+import fr.theshark34.sharkengine.Game;
 import fr.theshark34.sharkengine.ui.Button;
 import fr.theshark34.sharkengine.ui.GUI;
 import fr.theshark34.sharkengine.ui.Image;
@@ -62,7 +63,8 @@ public class GUIMenu extends GUI {
 				- 50, Display.getHeight() / 6 - 30, 150, 60, "UI Demo", null,
 				new ButtonAction() {
 					public void buttonClicked() {
-						System.out.println("clicked");
+						// Display a new GUIUIDemo
+						Game.setCurrentGUI(new GUIUIDemo());
 					}
 				});
 	}

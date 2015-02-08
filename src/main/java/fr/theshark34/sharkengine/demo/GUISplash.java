@@ -43,6 +43,9 @@ public class GUISplash extends GUI {
 	 */
 	private long time;
 
+	/**
+	 * Init the GUI
+	 */
 	@Override
 	public void init() {
 		// Initializing the big splash logo
@@ -59,6 +62,9 @@ public class GUISplash extends GUI {
 		time = System.currentTimeMillis();
 	}
 
+	/**
+	 * Draw the GUI
+	 */
 	@Override
 	public void draw() {
 		// Drawing the big splash logo

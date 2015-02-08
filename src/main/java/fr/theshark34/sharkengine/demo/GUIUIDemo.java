@@ -17,6 +17,7 @@ package fr.theshark34.sharkengine.demo;
 
 import fr.theshark34.sharkengine.ui.Button;
 import fr.theshark34.sharkengine.ui.GUI;
+import fr.theshark34.sharkengine.ui.ProgressBar;
 import fr.theshark34.sharkengine.ui.util.ButtonAction;
 
 /**
@@ -27,19 +28,36 @@ import fr.theshark34.sharkengine.ui.util.ButtonAction;
  */
 public class GUIUIDemo extends GUI {
 
+	/**
+	 * A simple button
+	 */
 	private Button simpleButton;
+	
+	/**
+	 * A simple progress bar
+	 */
+	private ProgressBar simplePB;
 
+	/**
+	 * The time to update the progressbar
+	 */
+	private long time;
+	
 	/**
 	 * Init the GUI
 	 */
 	@Override
 	public void init() {
-		simpleButton = new Button(50, 50, 150, 60, "Simple Button", null,
+		simpleButton = new Button(50, 50, 175, 60, "Simple Button", null,
 				new ButtonAction() {
 					@Override
 					public void buttonClicked() {
 					}
 				});
+		simplePB = new ProgressBar(275, 65, 350, 30, null);
+		simplePB.setString("This is a String !");
+		simplePB.setMaximum(100);
+		time = System.currentTimeMillis();
 	}
 
 	/**
@@ -48,6 +66,14 @@ public class GUIUIDemo extends GUI {
 	@Override
 	public void draw() {
 		simpleButton.draw();
+		simplePB.draw();
+		if(System.currentTimeMillis() - time >= 50) {
+			if(simplePB.getValue() == 100)
+				simplePB.setValue(0);
+			else
+				simplePB.setValue(simplePB.getValue() + 1);
+			time = System.currentTimeMillis();
+		}
 	}
 
 }

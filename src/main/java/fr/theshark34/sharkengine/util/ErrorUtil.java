@@ -35,7 +35,7 @@ public class ErrorUtil {
 	public static void catchError(Exception e) {
 		e.printStackTrace();
 		Display.destroy();
-		System.exit(0);
+		System.exit(1);
 	}
 
 }

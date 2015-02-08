@@ -51,7 +51,7 @@ public class GUISplash extends GUI {
 		// Initializing the big splash logo
 		try {
 			splash = new Image(0, 0,
-					ResourceLoader.getResourceAsStream("demo/splash.png"));
+					ResourceLoader.getResourceAsStream("res/demo/splash.png"));
 			splash.setX(Display.getWidth() / 2 - splash.getWidth() / 2);
 			splash.setY(Display.getHeight() / 2 - splash.getHeight() / 2);
 		} catch (IOException e) {

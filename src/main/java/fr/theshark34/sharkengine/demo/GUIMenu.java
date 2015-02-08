@@ -51,7 +51,7 @@ public class GUIMenu extends GUI {
 		try {
 			logo = new Image(0, 0,
 					ResourceLoader
-							.getResourceAsStream("demo/logosharkengine.png"));
+							.getResourceAsStream("res/demo/logosharkengine.png"));
 		} catch (IOException e) {
 			ErrorUtil.catchError(e);
 		}

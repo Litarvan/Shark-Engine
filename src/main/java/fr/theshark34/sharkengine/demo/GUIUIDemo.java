@@ -16,6 +16,7 @@
 package fr.theshark34.sharkengine.demo;
 
 import fr.theshark34.sharkengine.ui.Button;
+import fr.theshark34.sharkengine.ui.Checkbox;
 import fr.theshark34.sharkengine.ui.GUI;
 import fr.theshark34.sharkengine.ui.ProgressBar;
 import fr.theshark34.sharkengine.ui.util.ButtonAction;
@@ -37,6 +38,11 @@ public class GUIUIDemo extends GUI {
 	 * A simple progress bar
 	 */
 	private ProgressBar simplePB;
+	
+	/**
+	 * A simple checkbox
+	 */
+	private Checkbox simpleCB;
 
 	/**
 	 * The time to update the progressbar
@@ -48,16 +54,22 @@ public class GUIUIDemo extends GUI {
 	 */
 	@Override
 	public void init() {
+		// Initializing the simple button
 		simpleButton = new Button(50, 50, 175, 60, "Simple Button", null,
 				new ButtonAction() {
 					@Override
 					public void buttonClicked() {
 					}
 				});
-		simplePB = new ProgressBar(275, 65, 350, 30, null);
-		simplePB.setString("This is a String !");
+		
+		// Initializing the simple progress bar
+		simplePB = new ProgressBar(50, 125, 350, 30, null);
+		simplePB.setString("Simple Progress Bar");
 		simplePB.setMaximum(100);
 		time = System.currentTimeMillis();
+		
+		// Initializing the simple checkbox
+		simpleCB = new Checkbox(50, 175, "Simple Checkbox", null);
 	}
 
 	/**
@@ -65,7 +77,10 @@ public class GUIUIDemo extends GUI {
 	 */
 	@Override
 	public void draw() {
+		// Drawing the simple button
 		simpleButton.draw();
+		
+		// Drawing the simple progress bar
 		simplePB.draw();
 		if(System.currentTimeMillis() - time >= 50) {
 			if(simplePB.getValue() == 100)
@@ -74,6 +89,9 @@ public class GUIUIDemo extends GUI {
 				simplePB.setValue(simplePB.getValue() + 1);
 			time = System.currentTimeMillis();
 		}
+		
+		// Drawing the simple checkbox
+		simpleCB.draw();
 	}
 
 }

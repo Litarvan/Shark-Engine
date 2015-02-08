@@ -280,7 +280,7 @@ public class Button extends Component {
 	/**
 	 * Return the font of the text drawed in the center
 	 * 
-	 * @return
+	 * @return The font of the text
 	 */
 	public UnicodeFont getFont() {
 		return this.font;

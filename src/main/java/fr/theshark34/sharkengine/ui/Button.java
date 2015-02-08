@@ -207,6 +207,9 @@ public class Button extends Component {
 		initFont();
 	}
 
+	/**
+	 * Draw the button
+	 */
 	@Override
 	public void draw() {
 		// Enabling blending

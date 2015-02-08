@@ -42,17 +42,17 @@ public class Game {
 	private static boolean running;
 
 	/**
-	 * The Game's name
+	 * The Game name
 	 */
 	private static String name;
 
 	/**
-	 * The title of the Game's window
+	 * The title of the Game window
 	 */
 	private static String title;
 
 	/**
-	 * The icon of the Game's window
+	 * The icon of the Game window
 	 */
 	private static BufferedImage icon;
 
@@ -169,25 +169,25 @@ public class Game {
 	}
 
 	/**
-	 * The Game's name set in the create() method
+	 * The Game name set in the create() method
 	 * 
-	 * @return The Game's name
+	 * @return The Game name
 	 */
 	public static String getName() {
 		return name;
 	}
 
 	/**
-	 * The title of the Game's window set in the create() method
+	 * The title of the Game window set in the create() method
 	 * 
-	 * @return The title of the Game's window
+	 * @return The title of the Game window
 	 */
 	public static String getTitle() {
 		return title;
 	}
 
 	/**
-	 * Set a new title for the Game's window
+	 * Set a new title for the Game window
 	 * 
 	 * @param title
 	 *            The new title
@@ -198,9 +198,9 @@ public class Game {
 	}
 
 	/**
-	 * The icon of the Game's window set in the create() method
+	 * The icon of the Game window set in the create() method
 	 * 
-	 * @return The icon of the Game's window
+	 * @return The icon of the Game window
 	 */
 	public static BufferedImage getIcon() {
 		return icon;

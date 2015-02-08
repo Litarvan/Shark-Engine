@@ -29,7 +29,7 @@ public class Demo {
 
 	public static void main(String[] args) {
 		// Just create the Game named "Shark Engine Demo" with
-		// "Shark Engine Demo" as window's title, an icon for the window and a
+		// "Shark Engine Demo" as window title, an icon for the window and a
 		// clear color (= background color)
 		Game.create("Shark Engine Demo", "Shark Engine Demo", null,
 				new GUISplash(), new Color(75, 75, 75));

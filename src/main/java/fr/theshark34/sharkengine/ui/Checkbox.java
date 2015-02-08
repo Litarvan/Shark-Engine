@@ -71,7 +71,7 @@ public class Checkbox extends Component {
 			"Arial", Font.PLAIN, 18), 18, true, false);
 
 	/**
-	 * The font of the button's text (by default BASE_FONT)
+	 * The font of the text (by default BASE_FONT)
 	 */
 	private UnicodeFont font = BASE_FONT;
 

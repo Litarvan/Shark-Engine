@@ -41,18 +41,18 @@ public class Button extends Component {
 	private String text;
 
 	/**
-	 * The button's color (by default white 80% transparent)
+	 * The button color (by default white 80% transparent)
 	 */
 	private Color color;
 
 	/**
-	 * The button's color when the button is hover (by default created by the
+	 * The button color when the button is hover (by default created by the
 	 * createColorHover() method)
 	 */
 	private Color colorHover;
 
 	/**
-	 * The text's color
+	 * The text color
 	 */
 	private Color textColor;
 
@@ -73,7 +73,7 @@ public class Button extends Component {
 			"Arial", Font.BOLD, 22), 22, true, false);
 
 	/**
-	 * The font of the button's text (by default BASE_FONT)
+	 * The font of the text (by default BASE_FONT)
 	 */
 	private UnicodeFont font = BASE_FONT;
 
@@ -81,15 +81,15 @@ public class Button extends Component {
 	 * Lightest constructor
 	 * 
 	 * @param x
-	 *            The button's x pos
+	 *            The button x pos
 	 * @param y
-	 *            The button's y pos
+	 *            The button y pos
 	 * @param width
-	 *            The button's width
+	 *            The button width
 	 * @param height
-	 *            The button's height
+	 *            The button height
 	 * @param text
-	 *            The button's text displayed at the center of it
+	 *            The button text displayed at the center of it
 	 * @param textColor
 	 *            The color of the text
 	 * @param action
@@ -118,15 +118,15 @@ public class Button extends Component {
 	 * Light constructor
 	 * 
 	 * @param x
-	 *            The button's x pos
+	 *            The button x pos
 	 * @param y
-	 *            The button's y pos
+	 *            The button y pos
 	 * @param width
-	 *            The button's width
+	 *            The button width
 	 * @param height
-	 *            The button's height
+	 *            The button height
 	 * @param text
-	 *            The button's text displayed at the center of it
+	 *            The button text displayed at the center of it
 	 * @param color
 	 *            The color of the button
 	 * @param textColor
@@ -164,15 +164,15 @@ public class Button extends Component {
 	 * Normal constructor
 	 * 
 	 * @param x
-	 *            The button's x pos
+	 *            The button x pos
 	 * @param y
-	 *            The button's y pos
+	 *            The button y pos
 	 * @param width
-	 *            The button's width
+	 *            The button width
 	 * @param height
-	 *            The button's height
+	 *            The button height
 	 * @param text
-	 *            The button's text displayed at the center of it
+	 *            The button text displayed at the center of it
 	 * @param color
 	 *            The color of the button
 	 * @param colorHover
@@ -224,7 +224,7 @@ public class Button extends Component {
 				&& Mouse.getY() < Display.getHeight() - this.y
 				&& Mouse.getY() > Display.getHeight() - this.y - this.height) {
 
-			// Changing button's color to colorHover
+			// Changing button color to colorHover
 			GL11.glColor4f((float) colorHover.getRed() / 255,
 					(float) colorHover.getGreen() / 255,
 					(float) colorHover.getBlue() / 255,
@@ -248,7 +248,7 @@ public class Button extends Component {
 					(float) color.getBlue() / 255,
 					(float) color.getAlpha() / 255);
 
-		// Drawing the button's base (a rectangle)
+		// Drawing the button base (a rectangle)
 		GL11.glBegin(GL11.GL_QUADS);
 		{
 			GL11.glVertex2f(x, y);
@@ -398,7 +398,7 @@ public class Button extends Component {
 
 	/**
 	 * Try to create a color when the mouse in on the button from the base
-	 * button's color, it cans sometimes be ugly
+	 * button color, it cans sometimes be ugly
 	 */
 	private void createColorHover() {
 		// If the color is white

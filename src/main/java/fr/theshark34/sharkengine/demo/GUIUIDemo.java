@@ -15,11 +15,14 @@
  */
 package fr.theshark34.sharkengine.demo;
 
+import org.lwjgl.opengl.Display;
+
 import fr.theshark34.sharkengine.ui.GUI;
 import fr.theshark34.sharkengine.ui.components.Button;
 import fr.theshark34.sharkengine.ui.components.Checkbox;
 import fr.theshark34.sharkengine.ui.components.HorizontalSlider;
 import fr.theshark34.sharkengine.ui.components.ProgressBar;
+import fr.theshark34.sharkengine.ui.components.VerticalSlider;
 import fr.theshark34.sharkengine.ui.util.ButtonAction;
 
 /**
@@ -51,6 +54,11 @@ public class GUIUIDemo extends GUI {
 	private HorizontalSlider simpleHZ;
 
 	/**
+	 * A simple vertical slider
+	 */
+	private VerticalSlider simpleVZ;
+	
+	/**
 	 * The time to update the progressbar
 	 */
 	private long time;
@@ -80,6 +88,9 @@ public class GUIUIDemo extends GUI {
 		
 		// Initializing the simple horizontal slider
 		simpleHZ = new HorizontalSlider(50, 205, 350, 25);
+		
+		// Initializing the simple vertical slider
+		simpleVZ = new VerticalSlider(Display.getWidth() - 50, 25, 25, Display.getHeight() - 50);
 	}
 
 	/**
@@ -105,6 +116,9 @@ public class GUIUIDemo extends GUI {
 		
 		// Drawing the simple horizontal slider
 		simpleHZ.draw();
+		
+		// Drawing the simple vertical slider
+		simpleVZ.draw();
 	}
 
 }

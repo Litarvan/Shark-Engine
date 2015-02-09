@@ -22,12 +22,12 @@ import org.lwjgl.opengl.Display;
 import org.lwjgl.opengl.GL11;
 
 /**
- * The horizontal slider component
+ * The vertical slider component
  * 
  * @author TheShark34
  * @version ALPHA 0.0.1
  */
-public class HorizontalSlider extends Component {
+public class VerticalSlider extends Component {
 
 	/**
 	 * The slider background color
@@ -40,14 +40,14 @@ public class HorizontalSlider extends Component {
 	private Color sliderColor;
 
 	/**
-	 * The slider width
+	 * The slider height
 	 */
-	private int sliderWidth;
+	private int sliderHeight;
 
 	/**
-	 * The slider x pos
+	 * The slider y pos
 	 */
-	private int sliderX;
+	private int sliderY;
 
 	/**
 	 * If the mouse clicked the slider
@@ -71,14 +71,14 @@ public class HorizontalSlider extends Component {
 	 * @param height
 	 *            The height
 	 */
-	public HorizontalSlider(int x, int y, int width, int height) {
+	public VerticalSlider(int x, int y, int width, int height) {
 		this.x = x;
 		this.y = y;
 		this.width = width;
 		this.height = height;
 		this.color = new Color(1.0F, 1.0F, 1.0F, 0.2F);
 		createSliderColor();
-		this.sliderWidth = 150;
+		this.sliderHeight = 150;
 	}
 
 	/**
@@ -95,14 +95,14 @@ public class HorizontalSlider extends Component {
 	 * @param color
 	 *            The slider background color
 	 */
-	public HorizontalSlider(int x, int y, int width, int height, Color color) {
+	public VerticalSlider(int x, int y, int width, int height, Color color) {
 		this.x = x;
 		this.y = y;
 		this.width = width;
 		this.height = height;
 		this.color = color;
 		createSliderColor();
-		this.sliderWidth = 150;
+		this.sliderHeight = 150;
 	}
 
 	/**
@@ -121,7 +121,7 @@ public class HorizontalSlider extends Component {
 	 * @param sliderColor
 	 *            The slider color
 	 */
-	public HorizontalSlider(int x, int y, int width, int height, Color color,
+	public VerticalSlider(int x, int y, int width, int height, Color color,
 			Color sliderColor) {
 		this.x = x;
 		this.y = y;
@@ -129,7 +129,7 @@ public class HorizontalSlider extends Component {
 		this.height = height;
 		this.color = color;
 		this.sliderColor = sliderColor;
-		this.sliderWidth = 150;
+		this.sliderHeight = 150;
 	}
 
 	/**
@@ -185,16 +185,16 @@ public class HorizontalSlider extends Component {
 		GL11.glDisable(GL11.GL_TEXTURE_2D);
 
 		// Check if the mouse is on the slider
-		if (Mouse.getX() > this.x + this.sliderX
-				&& Mouse.getX() < this.x + this.sliderX + this.sliderWidth
-				&& Mouse.getY() < Display.getHeight() - this.y
-				&& Mouse.getY() > Display.getHeight() - this.y - this.height) {
+		if (Mouse.getX() > this.x
+				&& Mouse.getX() < this.x + width
+				&& Mouse.getY() < Display.getHeight() - this.y + this.sliderY
+				&& Mouse.getY() > Display.getHeight() - this.y - this.sliderY - this.sliderHeight) {
 			// If the mouse clicked and clicked is false, settings clicked to
 			// true and saving mouse initial click
 			if (Mouse.isButtonDown(0)) {
 				if (!clicked) {
 					clicked = true;
-					mouseClick = Mouse.getX();
+					mouseClick = Display.getHeight() - Mouse.getY();
 				}
 			} else
 				// If mouse isn't on it, setting clicked to false
@@ -206,18 +206,18 @@ public class HorizontalSlider extends Component {
 
 		// If mouse clicked
 		if (clicked) {
-			// If slider isn't on the minimum / maximum
-			if (sliderX >= 0 && sliderX + sliderWidth <= width)
-				if (sliderX + Mouse.getX() - mouseClick >= 0)
-					if (sliderX + sliderWidth + Mouse.getX() - mouseClick <= width) {
-						sliderX += Mouse.getX() - mouseClick;
-						mouseClick = Mouse.getX();
-					} else
-						sliderX = width - sliderWidth;
-				else
-					sliderX = 0;
-		}
 
+			// If slider isn't on the minimum / maximum
+			if (sliderY >= 0 && sliderY + sliderHeight <= height)
+				if (sliderY + Display.getHeight() - Mouse.getY() - mouseClick >= 0)
+					if (sliderY + sliderHeight + Display.getHeight() - Mouse.getY() - mouseClick <= height) {
+						sliderY += Display.getHeight() - Mouse.getY() - mouseClick;
+						mouseClick = Display.getHeight() - Mouse.getY();
+					} else
+						sliderY = height - sliderHeight;
+				else
+					sliderY = 0;
+		}
 		// Picking the background color
 		GL11.glColor4f((float) color.getRed() / 255,
 				(float) color.getGreen() / 255, (float) color.getBlue() / 255,
@@ -242,10 +242,10 @@ public class HorizontalSlider extends Component {
 		// Drawing the slider
 		GL11.glBegin(GL11.GL_QUADS);
 		{
-			GL11.glVertex2f(x + sliderX, y);
-			GL11.glVertex2f(x + sliderX + sliderWidth, y);
-			GL11.glVertex2f(x + sliderX + sliderWidth, y + height);
-			GL11.glVertex2f(x + sliderX, y + height);
+			GL11.glVertex2f(x, y + sliderY);
+			GL11.glVertex2f(x + width, y + sliderY);
+			GL11.glVertex2f(x + width, y + sliderY + sliderHeight);
+			GL11.glVertex2f(x, y + sliderY + sliderHeight);
 		}
 		GL11.glEnd();
 	}
@@ -289,31 +289,31 @@ public class HorizontalSlider extends Component {
 	}
 
 	/**
-	 * Return the slider width (by default 150)
+	 * Return the slider height (by default 150)
 	 * 
-	 * @return The slider width
+	 * @return The slider height
 	 */
-	public int getSliderWidth() {
-		return sliderWidth;
+	public int getSliderHeight() {
+		return sliderHeight;
 	}
 
 	/**
-	 * Set a new slider width (by default 150)
+	 * Set a new slider height (by default 150)
 	 * 
-	 * @param sliderWidth
-	 *            The new slider width
+	 * @param sliderHeight
+	 *            The new slider height
 	 */
-	public void setSliderWidth(int sliderWidth) {
-		this.sliderWidth = sliderWidth;
+	public void setSliderHeight(int sliderHeight) {
+		this.sliderHeight = sliderHeight;
 	}
 
 	/**
-	 * Return the slider X from 0 to width - sliderWidth
+	 * Return the slider Y from 0 to height - sliderHeight
 	 * 
-	 * @return The slider X
+	 * @return The slider Y
 	 */
-	public int getSliderX() {
-		return sliderX;
+	public int getSliderY() {
+		return sliderY;
 	}
 
 }
